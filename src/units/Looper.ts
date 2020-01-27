@@ -6,6 +6,7 @@ import Controller from "../Controller";
 export default class Looper extends Unit {
     private readonly range = 100;
     private readonly fireAngle = 60;
+    private readonly moveAngle = 60;
     public readonly maxDist = 500;
     public readonly width = 30;
     public readonly height = 10;
@@ -29,7 +30,12 @@ export default class Looper extends Unit {
         return this._nextHeading;
     }
     public set nextHeading(head: number) {
-        this._nextHeading = head;
+        const diff = Math.abs(head - this.position.heading);
+        if (diff > this.moveAngle / 2) {
+            this._nextHeading = Math.sign(head - this.position.heading) * this.moveAngle / 2;
+        } else {
+            this._nextHeading = head;
+        }
         this.controller.rerender();
     }
 
