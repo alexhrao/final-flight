@@ -7,6 +7,23 @@
   pointer-events: none;
 }
 
+#mainCanvas {
+  cursor: grab;
+}
+
+#mainCanvas.grabbing {
+  cursor: grabbing;
+}
+#mainCanvas.pointing {
+  cursor: pointer;
+}
+#mainCanvas.normal {
+  cursor: default;
+}
+#turnExecutor.executing {
+  color: lightgray;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
