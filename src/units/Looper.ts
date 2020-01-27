@@ -32,7 +32,7 @@ export default class Looper extends Unit {
     public set nextHeading(head: number) {
         const diff = Math.abs(head - this.position.heading);
         if (diff > this.moveAngle / 2) {
-            this._nextHeading = Math.sign(head - this.position.heading) * this.moveAngle / 2;
+            this._nextHeading = Math.sign(head - this.position.heading) * this.moveAngle / 2 + this.position.heading;
         } else {
             this._nextHeading = head;
         }
