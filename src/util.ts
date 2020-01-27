@@ -10,7 +10,6 @@ export function angle(a: Point, b: Point, c: Point): number {
     const bc = Math.sqrt((b.x - c.x) ** 2 + (b.y - c.y) ** 2);
     const ac = Math.sqrt((a.x - c.x) ** 2 + (a.y - c.y) ** 2);
     const out = Math.acos(((ba ** 2) + (bc ** 2) - (ac ** 2)) / (2 * ba * bc)) * 180 / Math.PI;
-    console.log(`BA: ${ba}\nBC: ${bc}\nAC: ${ac}\nANGLE: ${out}`);
     return c.y > b.y ? out : -out;
 }
 

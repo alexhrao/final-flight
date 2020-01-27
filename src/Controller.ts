@@ -28,7 +28,6 @@ export default class Controller {
             return;
         }
         const mouse: Point = { x: e.clientX, y: e.clientY };
-        console.log(angle(this._units[0].pointerPosition!, this._units[0].position, mouse));
         const unit = this._units.find(u => isPointerContained(mouse, this.translation, u.pointerPosition));
         if (unit) {
             this.guidedUnit = unit;
